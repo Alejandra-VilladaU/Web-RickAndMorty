@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  baseUrlApiWeb: 'https://rickandmortyapi.com/api/character/',
+  baseEpisodesUrl: "https://rickandmortyapi.com/api/episode/",
 };

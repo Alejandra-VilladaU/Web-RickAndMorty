@@ -1,26 +1,31 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {Character} from "./interfaces/character";
+import {environment} from "../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class InfoCharacterService {
 
-  constructor() {
-    fetch("https://rickandmortyapi.com/api/character")
-      .then(function(response) {
+  constructor(private http: HttpClient) {
+
+    fetch("https://rickandmortyapi.com/api/character/")
+      .then(function (response) {
         return response.json();
       })
-      .then(function(myJson) {
+      .then(function (myJson) {
         console.log(myJson);
       });
-    // this.http.get("https://rickandmortyapi.com/api/character");
   }
- /* getCharacter() {
-    this.http.get("https://rickandmortyapi.com/api/character").subscribe(data => {
-      console.log(data);
-    });*/
-  // @ts-ignore
 
+  findCharacters(query='', page=1){
+    return this.http.get<Character[]>(
+      `${environment.baseUrlApiWeb}/?name=${query}&page=${page}`);
   }
+  getDetail(id:number){
+    return this.http.get<Character>(
+      `${environment.baseUrlApiWeb}/${id}`)
+  }
+}
 

@@ -13,26 +13,32 @@
 
 
     <!-- Portfolio Grid Items-->
-    <div class="row justify-content-center">
 
-        <div *ngFor="let listCharacter of listCharacters" class="col-md-6 col-lg-4 mb-5">
+  <div class="row justify-content-center" *gnFor="let character of characters">
+
+        <div class="col-md-6 col-lg-4 mb-5">
           <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal7">
             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
               <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
             </div>
-            <img class="img-fluid" src="{{listCharacter.image}}" alt="Logo 7">
+            <div class="image">
+              <a [routerLink]="['/characters-detail', character.id]">
+                <img class="img-fluid" [src]="character.image" [alt]="character.name">
+              </a>
+            </div>
+
           </div>
         </div>
 
       <!-- Portfolio Items-->
-      <div class="col-md-6 col-lg-4 mb-5">
+     <!-- <div class="col-md-6 col-lg-4 mb-5">
         <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal0">
           <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
             <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
           </div>
           <img class="img-fluid" src="assets/img/portfolio/logoRyM.jpg" alt="Logo 0"/>
         </div>
-      </div>
+      </div>-->
       <!--<div class="col-md-6 col-lg-4 mb-5">
         <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
           <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
@@ -79,8 +85,10 @@
         </div>
       </div>-->
     </div>
+    <app-episode></app-episode>
   </div>
 </section>
+<button class="badge-primary">Uuup</button>
 
 <!-- Portfolio Modal-->
 <div class="portfolio-modal modal fade" id="portfolioModal7" tabindex="-1" role="dialog"
@@ -106,6 +114,7 @@
               <!-- Portfolio Modal - Text-->
               <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Mollitia neque
                 assumenda ipsam nihil, molestias magnam, </p>
+            <a>Episodes</a>
               <button class="btn btn-primary" href="#" data-dismiss="modal"><i
                 class="fas fa-times fa-fw"></i>Close Window
               </button>
