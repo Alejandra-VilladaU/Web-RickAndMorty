@@ -14,13 +14,7 @@ export class InfoCharacterService {
       .then(function(myJson) {
         console.log(myJson);
       });
-    // this.http.get("https://rickandmortyapi.com/api/character");
-  }
- /* getCharacter() {
-    this.http.get("https://rickandmortyapi.com/api/character").subscribe(data => {
-      console.log(data);
-    });*/
-  // @ts-ignore
 
   }
+}
 

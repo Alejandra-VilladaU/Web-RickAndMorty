@@ -15,12 +15,12 @@
     <!-- Portfolio Grid Items-->
     <div class="row justify-content-center">
 
-        <div *ngFor="let listCharacter of listCharacters" class="col-md-6 col-lg-4 mb-5">
+        <div *ngFor="let listCharacter of listCharacters" class="col-md-6 col-lg-4 mb-5" >
           <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal7">
             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
               <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
             </div>
-            <img class="img-fluid" src="{{listCharacter.image}}" alt="Logo 7">
+            <img class="img-fluid" [src]="listCharacter.image" alt="Logo 7">
           </div>
         </div>
 
@@ -28,10 +28,12 @@
       <div class="col-md-6 col-lg-4 mb-5">
         <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal0">
           <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-          </div>
+            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i>
+            </div>   </div>
+
           <img class="img-fluid" src="assets/img/portfolio/logoRyM.jpg" alt="Logo 0"/>
         </div>
+
       </div>
       <!--<div class="col-md-6 col-lg-4 mb-5">
         <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
@@ -42,48 +44,12 @@
           <img class="img-fluid" src="assets/img/portfolio/logoRyM.jpg" alt="Logo 1"/>
         </div>
       </div>-->
-      <!--<div class="col-md-6 col-lg-4 mb-5">
-        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
-          <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-            <div class="portfolio-item-caption-content text-center text-white"><i
-              class="fas fa-plus fa-3x"></i></div>
-          </div>
-          <img class="img-fluid" src="assets/img/portfolio/logoRyM.jpg" alt="Logo 2"/>
-        </div>
-      </div>-->
-      <!--<div class="col-md-6 col-lg-4 mb-5">
-        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
-          <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-            <div class="portfolio-item-caption-content text-center text-white"><i
-              class="fas fa-plus fa-3x"></i></div>
-          </div>
-          <img class="img-fluid" src="assets/img/portfolio/logoRyM.jpg" alt="Logo 3"/>
-        </div>
-      </div>-->
-     <!-- <div class="col-md-6 col-lg-4 mb-5">
-        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
-          <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-            <div class="portfolio-item-caption-content text-center text-white"><i
-              class="fas fa-plus fa-3x"></i></div>
-          </div>
-          <img class="img-fluid" src="assets/img/portfolio/logoRyM.jpg" alt="Logo 4"/>
-        </div>
-      </div>-->
-      <!--<div class="col-md-6 col-lg-4 mb-5">
-        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
-          <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-            <div class="portfolio-item-caption-content text-center text-white"><i
-              class="fas fa-plus fa-3x"></i></div>
-          </div>
-          <img class="img-fluid" src="assets/img/portfolio/logoRyM.jpg" alt="Logo 5"/>
-        </div>
-      </div>-->
     </div>
   </div>
 </section>
 
 <!-- Portfolio Modal-->
-<div class="portfolio-modal modal fade" id="portfolioModal7" tabindex="-1" role="dialog"
+<div class="portfolio-modal modal fade" id="portfolioModal0" tabindex="-1" role="dialog"
      aria-labelledby="#portfolioModal0Label" aria-hidden="true">
   <div class="modal-dialog modal-xl" role="document">
     <div class="modal-content">
@@ -101,11 +67,13 @@
                 <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                 <div class="divider-custom-line"></div>
               </div>
+              <a href="" id="apiCard" class="btn-primary"> cargar API</a>
               <!-- Portfolio Modal - Image-->
               <img class="img-fluid rounded mb-5" src="assets/img/portfolio/rick-morty-portal.png" alt="Log cartoon"/>
               <!-- Portfolio Modal - Text-->
-              <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Mollitia neque
-                assumenda ipsam nihil, molestias magnam, </p>
+              <!--<button class="btn btn-primary" (click)="traer()">mostrar</button>
+              <div class="mt-5" id="contenido"></div>-->
+              <p class="mb-5"></p>
               <button class="btn btn-primary" href="#" data-dismiss="modal"><i
                 class="fas fa-times fa-fw"></i>Close Window
               </button>
