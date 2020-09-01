@@ -9,22 +9,23 @@ import {Component, OnInit} from '@angular/core';
 
 export class CharactersComponent implements OnInit {
   listCharacters: Array<any> = [];
+  data: any;
 
   constructor() { }
 
 
   ngOnInit(): void {
 
-    const $contenido=document.querySelector('#contenido')
-    function renderContenido(image) {
-      $contenido.setAttribute('src',image)
-    }
-    fetch('https://rickandmortyapi.com/api/character/')
-      .then(response => response.json())
-      .then(data=>{
-        //debugger
-        renderContenido(data.image)
-      })
+    /* const $contenido=document.querySelector('#contenido')
+   * function renderContenido(image) {
+       $contenido.setAttribute('src',image)
+     }
+     fetch('https://rickandmortyapi.com/api/character/')
+       .then(response => response.json())
+       .then(data=>{
+         //debugger
+         renderContenido(data.image)
+       })*/
 
     /*
     * fetch('https://rickandmortyapi.com/api/character/')
@@ -33,17 +34,10 @@ export class CharactersComponent implements OnInit {
     * .catch(error => console.error('Ocurrio un error'))
     * */
   }
-
-  /*var  contenido = document.querySelector('#contenido')
-  function traer() {
-    fetch('https://rickandmortyapi.com/api/character/',{
-      method: 'get'
-    })
-      .then(data => data.json())
-      .then(data => {
-        console.log(data)
-        this.contenido.innerHTML = `${data}`
-      })
+ /* getCharacter(){
+    fetch('https://rickandmortyapi.com/api/character/')
+      .then((response)=> response.json())
+      .then((data)=> console.log(data))
   }*/
 }
 

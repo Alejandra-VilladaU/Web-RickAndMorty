@@ -9,20 +9,26 @@ import {EpisodeModule} from "./@components/episode/episode.module";
 import {FooterModule} from "./@components/footer/footer.module";
 import {HeaderModule} from "./@components/header/header.module";
 import {NavbarModule} from "./@components/navbar/navbar.module";
+import { CharactersDetailComponent } from './@components/characters-detail/characters-detail.component';
+import {CharactersDetailModule} from "./@components/characters-detail/characters-detail.module";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CharactersDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CharactersModule,
+    CharactersDetailModule,
     CopyrightModule,
     EpisodeModule,
     FooterModule,
     HeaderModule,
-    NavbarModule
+    NavbarModule,
+    HttpClientModule
 
   ],
   providers: [],
