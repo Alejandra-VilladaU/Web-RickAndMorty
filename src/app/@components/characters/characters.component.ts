@@ -8,8 +8,6 @@ import {Component, OnInit} from '@angular/core';
 
 
 export class CharactersComponent implements OnInit {
-  listCharacters: Array<any> = [];
-  data: any;
 
   constructor() {
   }
