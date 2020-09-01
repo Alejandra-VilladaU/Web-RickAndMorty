@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CharactersComponent } from './characters.component';
+import {InfiniteScrollModule} from "ngx-infinite-scroll";
 
 
 
 @NgModule({
   declarations: [CharactersComponent],
   imports: [
-    CommonModule
+    CommonModule, InfiniteScrollModule
   ],
   exports:[CharactersComponent]
 })

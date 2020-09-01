@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostListener, Inject, OnInit} from '@angular/core';
 import {Character} from "../../interface/character";
 import {InfoCharacterService} from "../../services/info-character.service";
 import {take} from "rxjs/operators";
+import {DOCUMENT} from "@angular/common";
 
 type RequestInfo = {
   next: string;
@@ -19,16 +20,41 @@ export class CharactersDetailComponent implements OnInit {
     next: null,
   };
 
+  showGoBtn= false;
   private pageNum = 1;
   private query: string;
   private showScroll = 500;
   private hideScroll = 200;
 
-  constructor(private infoCharSvc: InfoCharacterService) {
+  constructor(
+    @Inject(DOCUMENT) private document:Document,
+    private infoCharSvc: InfoCharacterService) {
   }
 
   ngOnInit(): void {
     this.getDataFindSvc();
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll():void{
+    const yOffSet = window.pageYOffset;
+    if ((yOffSet || this.document.documentElement.scrollTop || this.document.body.scrollTop)> this.showScroll ){
+      this.showGoBtn = true;
+    } else if (this.showGoBtn && (yOffSet || this.document.documentElement.scrollTop || this.document.body.scrollTop)< this.hideScroll){
+this.showGoBtn= false;
+    }
+  }
+
+  onScrollD(){
+    if(this.info.next){
+      this.pageNum++;
+      this.getDataFindSvc();
+    }
+  }
+
+  onScrollUp():void{
+    this.document.body.scrollTop= 0;
+    this.document.documentElement.scrollTop= 0;
   }
 
   private getDataFindSvc(): void {

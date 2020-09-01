@@ -13,11 +13,15 @@
 
 
     <!-- Portfolio Grid Items-->
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" infinite-scroll (scrolled)="onScrollD()">
 
       <!-- Portfolio Items-->
       <div class="col-md-6 col-lg-4 mb-5" *ngFor="let character of characters">
         <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal12">
+<!--  <a href="../../@components/episode/episode.component.html"></a>-->
+          <!--<div class="portfolio-item mx-auto" data-toggle="modal" [routerLink]="['../../@components/episode/episode.component.html']">-->
+
+
           <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
             <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i>
             </div>
@@ -33,23 +37,30 @@
           <div class="card-img">
             <div class="card-header">
               <a [routerLink]="['./characters-detail',character.id]">
-                <h2>character.name</h2>
+                <h2>{{character.name}}</h2>
               </a>
             </div>
           </div>
-          <!--<div class="card-img-top"></div>
-          <img class="img-fluid" src="assets/img/portfolio/logoRyM.jpg" alt="Logo 0"/>-->
         </div>
       </div>
     </div>
   </div>
-  <button class="btn-primary">UuuuP</button>
+  <button
+    [ngClass]="'no-hidden'"
+    *ngIf="showGoBtn"
+    class="btn btn-secondary btn-lg active"
+    (click)="onScrollUp()">
+    UuuP </button>
 
 </section>
+
 
 <!-- Portfolio Modal-->
 <div class="portfolio-modal modal fade" id="portfolioModal12" tabindex="-1" role="dialog"
      aria-labelledby="#portfolioModal0Label" aria-hidden="true">
+
+  <!--   INFO DEL PERSONAJE    -->
+
   <div class="modal-dialog modal-xl" role="document">
     <div class="modal-content">
       <button class="close" type="button" data-dismiss="modal" aria-label="Close">
@@ -70,7 +81,8 @@
               <!-- Portfolio Modal - Image-->
               <img class="img-fluid rounded mb-5" src="assets/img/portfolio/rick-morty-portal.png" alt="Log cartoon"/>
               <!-- Portfolio Modal - Text-->
-              <p class="mb-5"> Lorem hasjdhfjashdfkjhslkjfhjsdhfjhd </p>
+
+              <p class="mb-5"> ALL INFO CHARACTER </p>
               <button class="btn btn-primary" href="#" data-dismiss="modal"><i
                 class="fas fa-times fa-fw"></i>Close Window
               </button>
@@ -81,7 +93,11 @@
     </div>
   </div>
 </div>
+
+
+
 <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
-<div class="scroll-to-top d-lg-none position-fixed"><a class="js-scroll-trigger d-block text-center text-white rounded"
-                                                       href="#page-top"><i class="fa fa-chevron-up"></i></a>
+<div class="scroll-to-top d-lg-none position-fixed">
+  <a class="js-scroll-trigger d-block text-center text-white rounded"
+     href="#page-top"><i class="fa fa-chevron-up"></i></a>
 </div>

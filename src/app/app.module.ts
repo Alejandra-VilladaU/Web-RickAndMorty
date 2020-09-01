@@ -12,6 +12,7 @@ import {NavbarModule} from "./@components/navbar/navbar.module";
 import { CharactersDetailComponent } from './@components/characters-detail/characters-detail.component';
 import {CharactersDetailModule} from "./@components/characters-detail/characters-detail.module";
 import {HttpClientModule} from "@angular/common/http";
+import {InfiniteScrollModule} from "ngx-infinite-scroll";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {HttpClientModule} from "@angular/common/http";
     FooterModule,
     HeaderModule,
     NavbarModule,
-    HttpClientModule
+    HttpClientModule,
+    InfiniteScrollModule
 
   ],
   providers: [],
